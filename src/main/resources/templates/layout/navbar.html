@@ -1,0 +1,70 @@
+<nav class="navbar">
+
+    <ul class="">
+        <li class="nav-item">
+            <a class="nav-link" href="pokedex">
+                Pokedex
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="trainers">
+                Trainers
+            </a>
+        </li>
+
+        <li class="nav-item navbar">
+            {{#user}}
+            <ul class="navbar-nav nav-item-right">
+                <li class="nav-item">
+                    <a href="/logout">Log out</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile">
+                        My Profile
+                    </a>
+                </li>
+                <li class="nav-item navbar-text">Welcome {{username}}</li>
+            </ul>
+            {{/user}}
+        </li>
+    </ul>
+
+    <style>
+        .navbar {
+            background-color: #0c0b0b;
+            display: inline-block;
+            border-radius: 10px;
+            width: 100%;
+        }
+        ul {
+            margin: 0;
+            padding: 0 30px;
+            list-style-type: none;
+            position: relative;
+            display: flex;
+            flex: 1 1 auto;
+        }
+        ul li:not(:last-child) {
+            margin-right: 15px;
+        }
+        ul li {
+            padding:10px;
+            border: 1px solid transparent;
+            transition: background 0.2s;
+            border-radius: 5px;
+        }
+        ul li a {
+            color: #fff;
+            text-transform: capitalize;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .navbar-text {
+            color: #fff;
+        }
+        .nav-item-right {
+            flex-direction: row-reverse;
+            place-items: flex-end;
+        }
+    </style>
+</nav>

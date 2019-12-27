@@ -22,7 +22,6 @@ public class RestConfiguration {
     @Bean
     RestTemplate trainerApiRestTemplate(){
         RestTemplate template = new RestTemplate();
-
         template.getInterceptors().add( new BasicAuthenticationInterceptor("username", "password") );
 
         return template;
